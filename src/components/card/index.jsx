@@ -1,13 +1,11 @@
 import React from 'react';
 import style from './style.module.css';
-import { Link } from 'react-router-dom';
+
 function Card({ title, img, id }) {
   return (
-    <Link
-      to={`/courses/${id}`}
-      className={style.card_container}
-      onClick={() => {}}
+    <div
       style={{ cursor: 'pointer' }}
+      className={style.card_container}
     >
       <div className={style.card_image}>
         <div className={style.image_container}>
@@ -17,7 +15,7 @@ function Card({ title, img, id }) {
       <div className={style.card_content}>
         <h1 className={style.card_title}>{title}</h1>
       </div>
-    </Link>
+    </div>
   );
 }
 

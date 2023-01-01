@@ -18,7 +18,6 @@ function Courses() {
                 key={course.id}
                 id={course.id}
                 title={course.title}
-                description={course.description}
                 img={course.img}
               />
             </div>

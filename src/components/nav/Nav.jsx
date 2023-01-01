@@ -1,24 +1,15 @@
 import React from 'react';
 import style from './Nav.module.css';
+import { Link } from 'react-router-dom';
 
-import useTheme from '../../context/Theme.context';
-import { useAuth } from '../../context/UserContext';
-
-import { useNavigate } from 'react-router-dom';
 
 function Nav() {
-  const { toggleTheme, theme } = useTheme();
-  const { user, logout } = useAuth();
-  const navigate = useNavigate();
+
+
   return (
     <nav>
       <div className={style.nav_container}>
-        <div
-          className={style.nav_title_wrapper}
-          onClick={() => {
-            navigate('/');
-          }}
-        >
+        <div className={style.nav_title_wrapper}>
           <img
             className={style.logo}
             src='https://files.codingninjas.in/pl-ninja-16706.svg'
@@ -27,38 +18,8 @@ function Nav() {
           <h4>Coding Ninjas</h4>
         </div>
         <div className={style.nav_details}>
-          {user ? (
-            <button
-              onClick={() => {
-                navigate('/courses');
-              }}
-            >
-              Courses
-            </button>
-          ) : (
-            <button
-              onClick={() => {
-                navigate('/signin');
-              }}
-            >
-              Login
-            </button>
-          )}
-          {user && (
-            <button
-              onClick={() => {
-                logout();
-              }}
-            >
-              LogOut
-            </button>
-          )}
-          <button
-            onClick={() => {
-              toggleTheme();
-            }}
-          >
-            {theme === 'light-theme' ? 'Dark' : 'Light'}
+          <button>
+            <a href='/courses'>Courses</a>
           </button>
         </div>
       </div>
