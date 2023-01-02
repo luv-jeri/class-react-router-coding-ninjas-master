@@ -1,13 +1,13 @@
 import React from 'react';
 import style from './Nav.module.css';
 
-import useTheme from '../../context/Theme.context';
+
 import { useAuth } from '../../context/UserContext';
 
 import { useNavigate } from 'react-router-dom';
 
 function Nav() {
-  const { toggleTheme, theme } = useTheme();
+
   const { user, logout } = useAuth();
   const navigate = useNavigate();
   return (
@@ -53,13 +53,6 @@ function Nav() {
               LogOut
             </button>
           )}
-          <button
-            onClick={() => {
-              toggleTheme();
-            }}
-          >
-            {theme === 'light-theme' ? 'Dark' : 'Light'}
-          </button>
         </div>
       </div>
     </nav>

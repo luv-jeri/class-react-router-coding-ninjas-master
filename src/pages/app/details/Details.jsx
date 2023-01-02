@@ -2,7 +2,7 @@ import React from 'react';
 import style from './Details.module.css';
 import { useParams , Link } from 'react-router-dom';
 import coursesData from '../../../data/courses.json';
-
+ 
 function Details() {
   const { id } = useParams();
   const course = coursesData.find((course) => course.id === id);
