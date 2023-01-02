@@ -7,7 +7,7 @@ export default function oader() {
       <img
         className={style.loadIcon}
         alt='loader-icon'
-        src='https://cdn-icons-png.flaticon.com/512/4228/4228133.png'
+        src='https://files.codingninjas.in/pl-ninja-16706.svg'
       />
     </div>
   );
