@@ -1,15 +1,16 @@
 import React from 'react';
 import style from './Nav.module.css';
-import { Link } from 'react-router-dom';
-
+import { Link, NavLink , useNavigate } from 'react-router-dom';
+import Courses from '../../pages/app/courses/Courses';
 
 function Nav() {
-
-
+ const navigate =  useNavigate()
   return (
     <nav>
       <div className={style.nav_container}>
-        <div className={style.nav_title_wrapper}>
+        <div className={style.nav_title_wrapper} onClick={()=>{
+          navigate('/')
+        }}>
           <img
             className={style.logo}
             src='https://files.codingninjas.in/pl-ninja-16706.svg'
@@ -19,7 +20,13 @@ function Nav() {
         </div>
         <div className={style.nav_details}>
           <button>
-            <a href='/courses'>Courses</a>
+            <NavLink to='/courses'>
+              {({ isActive }) => {
+                if (isActive)
+                  return ' On Courses';
+                else return 'GO TO COURSES';
+              }}
+            </NavLink>
           </button>
         </div>
       </div>
