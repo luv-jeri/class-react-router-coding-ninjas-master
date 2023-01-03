@@ -1,11 +1,13 @@
 import React from 'react';
 import style from './Details.module.css';
-import { useParams , Link } from 'react-router-dom';
 import coursesData from '../../../data/courses.json';
+import { useParams } from 'react-router-dom';
 
 function Details() {
-  const { id } = useParams();
-  const course = coursesData.find((course) => course.id === id);
+  const { courseID } = useParams();
+
+  const course = coursesData.find((course) => course.id === courseID);
+
   return (
     <div className={style.courses_container}>
       <div className={style.card_container}>
@@ -19,9 +21,9 @@ function Details() {
           <p className={style.card_description}>{course.description}</p>
         </div>
       </div>
-      <Link to={`/learn/${id}`} >
+      {/* <Link to={`/learn/${id}`} >
         <button className={style.button}>Start Learning</button>
-      </Link>
+      </Link> */}
     </div>
   );
 }

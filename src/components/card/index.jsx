@@ -1,11 +1,16 @@
 import React from 'react';
 import style from './style.module.css';
-
+import { useNavigate } from 'react-router-dom';
 function Card({ title, img, id }) {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate(`/courses/${id}`);
+  }
   return (
     <div
       style={{ cursor: 'pointer' }}
       className={style.card_container}
+      onClick={handleClick}
     >
       <div className={style.card_image}>
         <div className={style.image_container}>
