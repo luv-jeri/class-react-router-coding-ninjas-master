@@ -19,9 +19,6 @@ function Details() {
           <p className={style.card_description}>{course.description}</p>
         </div>
       </div>
-      <Link to={`/learn/${id}`} >
-        <button className={style.button}>Start Learning</button>
-      </Link>
     </div>
   );
 }

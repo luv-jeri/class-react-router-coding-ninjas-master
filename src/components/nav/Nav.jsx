@@ -2,13 +2,11 @@ import React from 'react';
 import style from './Nav.module.css';
 
 
-import { useAuth } from '../../context/UserContext';
 
 import { useNavigate } from 'react-router-dom';
 
 function Nav() {
-
-  const { user, logout } = useAuth();
+  
   const navigate = useNavigate();
   return (
     <nav>
@@ -27,32 +25,13 @@ function Nav() {
           <h4>Coding Ninjas</h4>
         </div>
         <div className={style.nav_details}>
-          {user ? (
-            <button
-              onClick={() => {
-                navigate('/courses');
-              }}
-            >
-              Courses
-            </button>
-          ) : (
-            <button
-              onClick={() => {
-                navigate('/signin');
-              }}
-            >
-              Login
-            </button>
-          )}
-          {user && (
-            <button
-              onClick={() => {
-                logout();
-              }}
-            >
-              LogOut
-            </button>
-          )}
+          <button
+            onClick={() => {
+              navigate('/courses');
+            }}
+          >
+            Courses
+          </button>
         </div>
       </div>
     </nav>

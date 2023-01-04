@@ -58,6 +58,7 @@ body {
   /* Internet Explorer 10+ */
   scrollbar-width: none;
   background-color: var(--clr-bg);
+  color : var(--clr-text-main)
   /* Firefox */
 }
 
